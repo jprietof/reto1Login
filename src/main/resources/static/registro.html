@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/reset.css" type="text/css">
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<!-- <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> -->
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'> 
+	<title>Registro</title>
+</head>
+<body>
+<div class="wrapper paso-1">
+	<header class="header">
+		<div class="contain">
+			<h1><img src="img/logo.png" alt="logotipo"></h1>
+		</div>
+	</header>
+	<div class="contain content">
+		 <form action="#" class="form" id="registro">
+		 	<fieldset>
+
+				 <div class="col">
+				 	<label for="nombre">Nombre <span class="tooltip" id="errorNombre"></span></label>
+				 	<input type="text" id="nombre" name="nombre" required>
+
+				 	<label for="emailN">E-mail <span class="tooltip" id="myEmail"></span></label>
+				 	<input type="email" id="emailN" name="emailN" required>
+
+				 	<label for="newpass">Contraseña <span class="tooltip" id="mypass"></span></label>
+				 	<input type="password" id="newpass" name="newpass" required>
+
+                     <label for="chekpass">Confirmar Contraseña <span class="tooltip" id="confirmar"></span></label>
+				 	<input type="password" id="chekpass" name="chekpass" required>
+			 	</div>
+                 <div class="ok"></div>
+                 <div class="error"></div>
+		 </fieldset>
+         <button type="submit" class="btn" onclick="return validarNewUser(this.form)">Registrar</button>
+             <p>¿Ya tienes cuenta? <a id="crear" href="index.html">Inicia sesión aquí</a></p>
+	 </form>
+	 </div>
+</div>
+ <!--Scripts-->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+ <script src="js/script.js"></script>
+</body>
+</html>

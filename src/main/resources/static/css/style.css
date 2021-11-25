@@ -1,0 +1,113 @@
+/*---------------------
+		LAYAOUT
+-----------------------*/
+html, body{
+	height: 100%;
+	min-height: 100%;
+}
+body{
+	font: 400 13px/1 'Roboto';
+}
+.wrapper{
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	min-height: 100%;
+	background: #f1f1f1;
+}
+.content{
+	display: flex;
+	flex-flow: column;
+	width: 100%;
+}
+/*.header{
+	width: 100%;
+}
+.contain{
+	max-width: 1024px;
+	margin: 0 auto;
+}*/
+/*------------------------
+		LOGIN
+-------------------------*/
+.login .header{
+	padding-bottom: 30px;
+	width: auto;
+	text-align: center;
+}
+.login .contain{
+	max-width: 350px;
+}
+.login .col{
+	width: 100%;
+	padding: 0;
+}
+.form{
+	width: 75%;
+	margin: 0 auto;
+	padding-bottom: 30px;
+	text-align: center;
+}
+.col{
+	display: inline-block;
+	width: 33%;
+	margin-bottom: 60px;
+	padding: 0 20px;
+	vertical-align: top;
+	text-align: left;
+}
+.form input[type="text"], .form input[type="email"], .form input[type="password"], .form select, .form textarea{
+	display: block;
+	width: 100%;
+	background: #fff;
+	border: 0;
+	padding:5px;
+	height: 40px;
+	margin-bottom: 25px;
+}
+.btn{
+	background: #740900;
+	color: #fff;
+	text-align: center;
+	border: 0;
+	padding: 10px 20px;
+	font-size: 18px;
+}
+.btn:hover{
+	background: green;
+	color: #fff;
+}
+.content header{
+	padding-bottom: 80px;
+	font-size: 45px;
+	font-weight: 300;
+	line-height: 1.2;
+}
+form p{
+margin-top: 15px;
+}
+.tooltip{
+	font-size: 12px;
+	font-weight: 300;
+	color: #ff1400;
+}
+.error span{
+	display: block;
+	background: #ff1400;
+	color: #fff;
+	text-align: center;
+	height: 20px;
+	width: 0 auto;
+	margin-bottom: 10px;
+}
+.ok span{
+	display: block;
+	background: green;
+	color: #fff;
+	text-align: center;
+	height: 20px;
+	width: 0 auto;
+	margin-bottom: 10px;
+}

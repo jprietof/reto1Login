@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/reset.css" type="text/css">
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+	<title>Login</title>
+</head>
+<body>
+	<div class="wrapper login">
+		<div class="contain content">
+			<header class="header">
+				<div class="contain">
+					<h1><img src="img/logo.png" alt="logotipo"></h1>
+				</div>
+			</header>
+
+			<form action="#" class="form" id="login">
+				<fieldset>
+					<div class="col">
+						<label for="usuario">Email <span class="tooltip" id="errorUser"></span></label>
+						<input type="email" id="usuario" name="usuario" required>
+
+						<label for="contrasena">Contraseña <span class="tooltip" id="errorPass"></span></label>
+						<input type="password" id="contrasena" name="contrasena" required>
+					</div>
+					<div class="error"></div>
+				</fieldset>
+				<button type="submit" class="btn" onclick="return validarLogin(this.form)">Ingresar</button>
+				<p>¿No tienes cuenta? <a id="crear" href="registro.html">Crea tu cuenta aquí</a></p>
+			</form>
+		</div>
+	</div>
+	 <!--Scripts-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="js/script.js"></script>
+</body>
+</html>
