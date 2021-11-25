@@ -2,11 +2,11 @@ package co.edu.usa.login.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import java.util.*;
 
 import co.edu.usa.login.model.User;
 import co.edu.usa.login.repository.RepositoryUser;
 
+import java.util.*;
 /**
  * 
  * @author jprietof

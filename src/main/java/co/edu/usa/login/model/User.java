@@ -10,8 +10,11 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
 /**
  * 
@@ -19,6 +22,8 @@ import lombok.RequiredArgsConstructor;
  *
  */
 @Entity
+@Getter
+@Setter
 @Data
 @RequiredArgsConstructor
 @NoArgsConstructor
@@ -31,10 +36,24 @@ public class User implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	@Column(nullable=false, unique=true, length=50)
+	@NonNull
+	@Column(name="user_email",nullable=false, unique=true, length=50)
 	private String email;
-	@Column(nullable=false, length=50)
+	@NonNull
+	@Column(name="user_password",nullable=false, length=50)
 	private String password;
-	@Column(name="first_name", nullable=false, length=80)
+	@NonNull
+	@Column(name="user_name", nullable=false, length=80)
 	private String name;
+	public User(String email2, String password2, String string) {
+		// TODO Auto-generated constructor stub
+	}
+	public Object getId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public String getEmail() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
