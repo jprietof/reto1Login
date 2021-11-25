@@ -15,38 +15,39 @@ import java.util.*;
 @Service
 public class ServiceUser {
 	@Autowired
-	private RepositoryUser methodCrud;
-	
-	public List<User> getAll(){
-		return methodCrud.getAll();
-	}
-	
-	public Optional<User> getUser(int id){
-		return methodCrud.getUser(id);
-	}
-	
-	public User registrar(User user) {
-		if(user.getId()==null) {
-			if (existeEmail(user.getEmail()) == false) {
-				return methodCrud.save(user);
-			}else{
-				return user;
-			}
-		}else {
-			return user;
-		}
-	}
-	
-	public boolean existeEmail(String email) {
-		return methodCrud.existeEmail(email);
-	}
-	
-	public User autenticarUsuario(String email, String password) {
-		Optional<User> usuario = methodCrud.autenticarUsuario(email, password);
-		if(usuario.isEmpty()) {
-			return new User(email, password, "NO DEFINIDO");
-		}else {
-			return usuario.get();
-		}
-	}
+    private RepositoryUser userRepository;
+    
+    public List<User> getAll() {
+        return userRepository.getAll();
+    }
+
+    public Optional<User> getUser(int id) {
+        return userRepository.getUser(id);
+    }
+
+    public User registrar(User user) {
+        if (user.getId() == null) {
+            if (existeEmail(user.getEmail()) == false) {
+                return userRepository.save(user);
+            } else {
+                return user;
+            }
+        } else {
+            return user;
+        }
+    }
+
+    public boolean existeEmail(String email) {
+        return userRepository.existeEmail(email);
+    }
+
+    public User autenticarUsuario(String email, String password) {
+        Optional<User> usuario = userRepository.autenticarUsuario(email, password);
+
+        if (usuario.isEmpty()) {
+            return new User(email, password, "NO DEFINIDO");
+        } else {
+            return usuario.get();
+        }
+    }
 }

@@ -5,8 +5,12 @@ import java.util.Optional;
 import org.springframework.data.repository.CrudRepository;
 
 import co.edu.usa.login.model.User;
-
+/**
+ * 
+ * @author jprietof
+ *
+ */
 public interface IUser extends CrudRepository<User, Integer>{
 	Optional<User> findByEmail(String email);
-	Optional<User> findByEmailAndPassword(String email, String password);
+    Optional<User> findByEmailAndPassword(String email,String password);
 }

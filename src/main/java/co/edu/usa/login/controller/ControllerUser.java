@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+
+
 import java.util.*;
 
 import co.edu.usa.login.model.User;
@@ -24,24 +26,27 @@ import co.edu.usa.login.service.ServiceUser;
 @RequestMapping("/api/user")
 @CrossOrigin("*")
 public class ControllerUser {
-	@Autowired
-	private ServiceUser userService;
-	
-	@GetMapping("/all")
-	public List<User> getAll(){
-		return userService.getAll();
-	}
-	@PostMapping("/new")
-	@ResponseStatus(HttpStatus.CREATED)
-	public User registrar(@RequestBody User user) {
-		return userService.registrar(user);
-	}
-	@GetMapping("/{email}/{password}")
-	public User autenticarUsuario(@PathVariable("email") String email, @PathVariable("password")String password) {
-		return userService.autenticarUsuario(email, password);
-	}
-	@GetMapping("/{email}")
-	public boolean existeEmail(@PathVariable("email") String email) {
-		return userService.existeEmail(email);
-	}
+	 @Autowired
+	    private ServiceUser userService;
+	    
+	    @GetMapping("/all")
+	    public List<User> getAll() {
+	        return userService.getAll();
+	    }
+	    
+	    @PostMapping("/new")
+	    @ResponseStatus(HttpStatus.CREATED)
+	    public User registrar(@RequestBody User user) {
+	        return userService.registrar(user);
+	    }
+	    
+	    @GetMapping("/{email}/{password}")
+	    public User autenticarUsuario(@PathVariable("email") String email, @PathVariable("password") String password) {
+	        return userService.autenticarUsuario(email, password);
+	    }
+	    
+	    @GetMapping("/{email}")
+	    public boolean existeEmail(@PathVariable("email") String email) {
+	        return userService.existeEmail(email);
+	    }   
 }

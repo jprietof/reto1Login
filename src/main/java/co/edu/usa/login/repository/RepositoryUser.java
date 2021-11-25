@@ -16,38 +16,28 @@ import co.edu.usa.login.model.dao.IUser;
 
 @Repository
 public class RepositoryUser {
-	@Autowired
-	/**
-	 * Connection Interface
-	 */
-	private IUser crudUser;
-	/**
-	 * List all user dataBase
-	 * @return
-	 */
-	public List<User> getAll(){
-		return (List<User>) crudUser.findAll();
-	}
-	/**
-	 * Search for Id
-	 * control of errors
-	 * @param id
-	 * @return
-	 */
-	public Optional<User> getUser(int id){
-		return crudUser.findById(id);
-	}
-	public User save(User user) {
-		return crudUser.save(user);
-	}
-	
-	public boolean existeEmail(String email) {
-		Optional<User> usuario = crudUser.findByEmail(email);
-		return !usuario.isEmpty();
-	}
-	
-	public Optional<User> autenticarUsuario(String email, String password){
-		return crudUser.findByEmailAndPassword(email,password);
-	}
+	 @Autowired
+	    private IUser userCrudRepository;
 
+	    public List<User> getAll() {
+	        return (List<User>) userCrudRepository.findAll();
+	    }
+
+	    public Optional<User> getUser(int id) {
+	        return userCrudRepository.findById(id);
+	    }
+
+	    public User save(User user) {
+	        return userCrudRepository.save(user);
+	    }
+
+	    public boolean existeEmail(String email) {
+	        Optional<User> usuario = userCrudRepository.findByEmail(email);
+
+	        return !usuario.isEmpty();
+	    }
+
+	    public Optional<User> autenticarUsuario(String email, String password) {
+	        return userCrudRepository.findByEmailAndPassword(email, password);
+	    }
 }
