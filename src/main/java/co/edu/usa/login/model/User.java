@@ -27,10 +27,6 @@ import lombok.RequiredArgsConstructor;
 @NoArgsConstructor
 @Table(name = "user", indexes = @Index(name = "indx_email", columnList = "user_email", unique = true))
 public class User implements Serializable{
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
